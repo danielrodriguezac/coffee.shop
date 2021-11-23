@@ -42,6 +42,7 @@ Follow these steps to achieve the requested functionality
 The first element that must be created is the Customer, only the name parameter is required. Remember you can use the explorer to execute these commands, there is also an OpenAPI spec, I think Postman can read those and give you a nice graphical interface if you find that more appealing
 
 METHOD: POST
+
 ROUTE: /customer
 
 ```
@@ -56,6 +57,7 @@ You will receive a new instance of Customer with an id, keep it somewhere safe, 
 ### Get a list of the items available at the coffee shop
 
 METHOD: GET
+
 ROUTE: /items
 
 You will receive something like the following with a few more elements, keep the ids of the desired items somewhere safe as well
@@ -85,6 +87,7 @@ You will receive something like the following with a few more elements, keep the
 Here you can browse the available promotions, two will be registered by the migration process
 
 METHOD: GET
+
 ROUTE: /promotions
 
 ```
@@ -124,6 +127,7 @@ ROUTE: /promotions
 With the data obtained previously we can now request the creation of a new Order, please keep in mind we are sending the ids of the items we want and the id of the Customer, the rest of the fields are not required and promotions will be applied automatically. You can use the PUT method to update your order when needed
 
 METHOD: Post
+
 ROUTE: /orders
 
 ```
@@ -164,6 +168,7 @@ Note that the promotion has already been applied lowering the price from 4$ to 3
 Even though this is a POST method the id is retrieved from the URI for simplicity
 
 METHOD: POST
+
 ROUTE: /orders/pay/619d0cffbfc17eb1fbcccc6c
 
 You will receive a response that looks like this:
@@ -183,6 +188,7 @@ You can use the nextPollSecs property to schedule the frontend polling for statu
 The simplest solution i could think of for this requirement was a sort of "directed polling" using the server response to determine when you should request for updates in order to notify the user
 
 METHOD: GET
+
 ROUTE: /orders/progress/619d120abfc17eb1fbcccc6d
 
 The response as the order is being prepared will look like this:
